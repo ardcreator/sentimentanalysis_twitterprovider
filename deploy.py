@@ -18,7 +18,6 @@ nltk.download('stopwords')
 nltk.download('movie_reviews')
 nltk.download('punkt')
 nltk.download('vader_lexicon')
-from textblob import TextBlob
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from textblob import Word

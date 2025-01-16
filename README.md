@@ -19,9 +19,9 @@
     - Muh. Fikri Firman
     - Rifky Agung Chrisatya Ntjali
 
-**Class**: Data Analyst 1 MIKTI
+- **Class**: Data Analyst 1 MIKTI
 
-**Mentor**: [Fadhan Adha](https://www.linkedin.com/in/fadhlan-adha/)
+- **Mentor**: [Fadhan Adha](https://www.linkedin.com/in/fadhlan-adha/)
 
 ## Project Overview
 Selamat datang di Proyek Analisis Sentimen Tim 5! 🌟 Tim kami, yang terdiri dari 5 anggota yang bersemangat dari kelas Analis Data-1 di MIKTI, tengah menyelami dunia media sosial secara mendalam untuk memahami sentimen publik.

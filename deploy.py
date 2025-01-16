@@ -57,8 +57,11 @@ if section == "About Us":
         - [Sri Agustin](https://www.linkedin.com/in/sriagustin/)
         - Muh. Fikri Firman
         - Rifky Agung Chrisatya Ntjali
-    **Class**: Data Analyst 1 MIKTI
-    **Mentor**: [Fadhan Adha](https://www.linkedin.com/in/fadhlan-adha/)
+        
+    - **Class**: Data Analyst 1 MIKTI
+    
+    - **Mentor**: [Fadhan Adha](https://www.linkedin.com/in/fadhlan-adha/)
+    
     ### Project Overview:
     Welcome to Team 5's Sentiment Analysis Project! 🌟 Our team, made up of 5 passionate members from the Data Analyst-1 class at MIKTI, is diving deep into the world of social media to understand public sentiment.
     ### Objective:

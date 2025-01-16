@@ -15,9 +15,7 @@ import plotly.express as px
 import nltk
 from nltk.corpus import stopwords
 nltk.download('stopwords')
-nltk.download('movie_reviews')
 nltk.download('punkt')
-nltk.download('vader_lexicon')
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from textblob import Word

@@ -48,7 +48,7 @@ section = st.sidebar.radio("Go to Section", nav_options)
 # Section About
 if section == "About Us":
     st.markdown("""<hr style="border: 2px solid #00b6ff; border-radius: 5px;">""", unsafe_allow_html=True)
-    st.subheader("ℹ️ About")
+    st.subheader("ℹ️ About Us")
     st.markdown("""
     ### Team 5 Members in [MIKTI](https://mikti.id):
     - **Leader**: [MUH. ASHARI RASYID](https://www.linkedin.com/in/ardcreator/)

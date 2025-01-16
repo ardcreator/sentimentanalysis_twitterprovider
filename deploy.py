@@ -12,12 +12,11 @@ import plotly.express as px
 
 import nltk
 nltk.download('stopwords')
-nltk.download('movie_reviews')
-nltk.download('punkt')
+nltk.download('wordnet')
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-from textblob import Word
 import sklearn
 
 from datetime import datetime
@@ -51,48 +50,20 @@ section = st.sidebar.radio("Go to Section", nav_options)
 if section == "About Us":
     st.markdown("""<hr style="border: 2px solid #00b6ff; border-radius: 5px;">""", unsafe_allow_html=True)
     st.subheader("ℹ️ About Us")
-    st.markdown("""
-    ### Team 5 Members in [MIKTI](https://mikti.id):
-    - **Leader**: [MUH. ASHARI RASYID](https://www.linkedin.com/in/ardcreator/)
-    - **Members**:
-        - [Mega Febriani](https://www.linkedin.com/in/megafebriani-528915326/)
-        - [Sri Agustin](https://www.linkedin.com/in/sriagustin/)
-        - Muh. Fikri Firman
-        - Rifky Agung Chrisatya Ntjali
-        
-    - **Class**: Data Analyst 1 MIKTI
-    
-    - **Mentor**: [Fadhan Adha](https://www.linkedin.com/in/fadhlan-adha/)
-    
-    ### Project Overview:
-    Welcome to Team 5's Sentiment Analysis Project! 🌟 Our team, made up of 5 passionate members from the Data Analyst-1 class at MIKTI, is diving deep into the world of social media to understand public sentiment.
-    ### Objective:
-    In this project, our mission is to uncover hidden insights from millions of Twitter posts by performing Sentiment Analysis. By classifying tweets as positive, negative, or neutral, we aim to shed light on how users feel about various cellular services. Whether it's customer satisfaction, issues, or praise, our analysis will provide valuable insights into the telecommunications industry.
-    """)
+    st.markdown("""...""")
 
 elif section == "How to Use?":
     st.markdown("""<hr style="border: 2px solid #00b6ff; border-radius: 5px;">""", unsafe_allow_html=True)
     st.subheader("💡 How to Use?")
-    st.markdown("""
-    ### How to Use this Application?
-    1. **View Sentiment Overview**: Understand the general sentiment on Twitter regarding cellular service providers by exploring word frequencies and sentiment distributions.
-    2. **Explore Sentiment Visualizations**: Visualize the sentiment breakdown (positive, negative, neutral) and see which words are frequently associated with each sentiment.
-    3. **Predict Sentiment**:
-        - **From Text**: Enter a sentence or a short paragraph in Indonesian, and the app will predict whether the sentiment is positive, negative, or neutral.
-        - **From File**: Upload a `.txt` file containing multiple sentences, and the app will predict the sentiment for each sentence inside the file.
-    4. **Interactive Results**: View the predicted sentiment for each input and explore detailed charts and visualizations based on the data analysis.
-    """)
+    st.markdown("""...""")
 
 # Read Data
 clean_data = pd.read_csv('data/twittercellular-clean-sentiment.csv')
 
-# Section Sentiment Analyze (Gabungan dari Sentiment Overview, Sentiment Distribution, dan Sentiment Visualization)
+# Section Sentiment Analyze
 if section == "Sentiment Analyze":
     st.markdown("""<hr style="border: 2px solid #00b6ff; border-radius: 5px;">""", unsafe_allow_html=True)
     st.subheader("📊 Sentiment Analyze")
-
-    # 1. Sentiment Overview
-    st.markdown("### Sentiment Overview")
     freq = pd.Series(' '.join(clean_data['Text Tweet']).split()).value_counts()
     head_freq = freq.head(20)
     fig1 = px.bar(
@@ -105,8 +76,6 @@ if section == "Sentiment Analyze":
     )
     st.plotly_chart(fig1, use_container_width=True)
 
-    # 2. Sentiment Distribution
-    st.markdown("### Sentiment Distribution")
     temp = clean_data.groupby('Sentiment').count()['Text Tweet'].reset_index().sort_values(by='Text Tweet', ascending=False)
     col1, col2 = st.columns(2)
     with col1:
@@ -121,35 +90,11 @@ if section == "Sentiment Analyze":
         fig3.update_traces(textposition='inside', textinfo='percent+label')
         st.plotly_chart(fig3, use_container_width=True)
 
-    # 3. Sentiment Visualization
-    for sentiment_label, emoji in zip(["Positif", "Negatif", "Netral"], ["\U0001F600", "\U0001F641", "\U0001F610"]):
-        st.subheader(f"{emoji} {sentiment_label} Sentiment Visualization")
-        df_sent = clean_data[clean_data['Sentiment'] == sentiment_label]
-        word_freq = pd.Series(' '.join(df_sent['Text Tweet']).split()).value_counts()
-        top_words = word_freq.head(10)
-
-        col1, col2 = st.columns(2)
-        with col1:
-            fig = px.bar(top_words, y=top_words.index, x=top_words.values, orientation='h',
-                        labels={'x': 'Frequency', 'y': 'Words'},
-                        title=f"Top 10 Words in {sentiment_label} Sentiment")
-            fig.update_layout(template="plotly_dark")
-            st.plotly_chart(fig, use_container_width=True)
-
-        with col2:
-            wordcloud = WordCloud(width=500, height=300, random_state=21, max_font_size=110).generate(' '.join(df_sent['Text Tweet']))
-            fig_cloud, ax = plt.subplots()
-            ax.imshow(wordcloud, interpolation="bilinear")
-            ax.axis('off')
-            ax.set_title(f"Word Cloud for {sentiment_label} Sentiment", fontsize=16)
-            st.pyplot(fig_cloud)
-
 # Section Sentiment Prediction
 elif section == "Sentiment Prediction":
     st.markdown("""<hr style="border: 2px solid #00b6ff; border-radius: 5px;">""", unsafe_allow_html=True)
 
     # Sentiment Prediction Logic
-    # Initialize Sastrawi Stemmer
     factory = StemmerFactory()
     stemmer = factory.create_stemmer()
     stop_words = set(stopwords.words('indonesian') + stopwords.words('english') + ["v", "h", "gak", "deh", "kok", "ga", "cug", "ya", "kah", "sih", "ht", "noh", "thu", "lho", "pejet", "dn", "cie", "dong", "aja", "itu", "hadeh", "si", "yg", "yah", "tuh", "nih", "d", "hal", "sy", "dr", "th", "lgsg", "jgn", "dgn", "krn", "yaa", "jabo", "tm", "tp", "hooq", "nya", "an", "oh", "jd", "g", "rb", "rt", "gb", "glte", "gnya", "lte", "pki", "j", "rp", "dg", "duh", "yuk", "js"])
@@ -160,10 +105,12 @@ elif section == "Sentiment Prediction":
         "terimakasih": "terima kasih",
         "riah": "meriah",
     }
+
     def correct_lemmatization(text):
         for typo, correct_word in lemmatization_dictionary.items():
             text = text.replace(typo, correct_word)
         return text
+
     def preprocess_text(text):
         if not isinstance(text, str):
             raise ValueError("Input to preprocess_text must be a string.")
@@ -172,11 +119,12 @@ elif section == "Sentiment Prediction":
         text = text.lower()
         words = [word for word in text.split() if word not in stop_words]
         lemmatized_words = []
+
+        lemmatizer = WordNetLemmatizer()  # Use WordNetLemmatizer for lemmatization
+
         for word in words:
-            if Word(word).spellcheck()[0][1] == 1.0:
-                lemmatized_words.append(Word(word).lemmatize())
-            else:
-                lemmatized_words.append(stemmer.stem(word))
+            lemmatized_word = lemmatizer.lemmatize(word, pos='v')  # Default POS is 'n' (noun), change to 'v' (verb) if needed
+            lemmatized_words.append(lemmatized_word)
         text = ' '.join(lemmatized_words)
         text = correct_lemmatization(text)
         return text

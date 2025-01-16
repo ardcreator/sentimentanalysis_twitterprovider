@@ -50,6 +50,10 @@ section = st.sidebar.radio("Go to Section", nav_options)
 if section == "About Us":
     st.markdown("""<hr style="border: 2px solid #00b6ff; border-radius: 5px;">""", unsafe_allow_html=True)
     st.subheader("ℹ️ About Us")
+
+    # Image Teams
+    st.image("img/Teams_Image.png")
+    
     st.markdown("""
     ### Team 5 Members in [MIKTI](https://mikti.id):
     - **Leader**: [MUH. ASHARI RASYID](https://www.linkedin.com/in/ardcreator/)

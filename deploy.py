@@ -18,6 +18,9 @@ nltk.download('movie_reviews')
 nltk.download('punkt')
 nltk.download('vader_lexicon')
 
+import textblob
+textblob.download_corpora("textblob")
+
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from textblob import Word
 import sklearn

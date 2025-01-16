@@ -18,12 +18,10 @@ nltk.download('movie_reviews')
 nltk.download('punkt')
 nltk.download('vader_lexicon')
 
-import textblob
-textblob.download_corpora()
-from textblob import Word
-
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from textblob import Word
 import sklearn
+
 from datetime import datetime
 current_year = datetime.now().year
 

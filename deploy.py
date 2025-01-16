@@ -242,6 +242,6 @@ st.markdown(f"""
     }}
     </style>
     <div class="footer">
-        Copyright © {current_year} All rights reserved | Application Created by <b><a href="https://bio.asharirasyid.my.id" target="_blank">Ashari Rasyid</a></b>
+        Copyright © {current_year} | Apps Created by <b><a href="https://bio.asharirasyid.my.id" target="_blank">Ashari Rasyid</a></b>
     </div>
 """, unsafe_allow_html=True)

@@ -144,10 +144,10 @@ elif section == "Sentiment Prediction":
         words = [word for word in text.split() if word not in stop_words]
         lemmatized_words = []
 
-        lemmatizer = WordNetLemmatizer()  # Use WordNetLemmatizer for lemmatization
+        lemmatizer = WordNetLemmatizer()
 
         for word in words:
-            lemmatized_word = lemmatizer.lemmatize(word, pos='v')  # Default POS is 'n' (noun), change to 'v' (verb) if needed
+            lemmatized_word = lemmatizer.lemmatize(word, pos='v')
             lemmatized_words.append(lemmatized_word)
         text = ' '.join(lemmatized_words)
         text = correct_lemmatization(text)

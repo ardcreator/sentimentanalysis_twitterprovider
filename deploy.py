@@ -18,11 +18,7 @@ nltk.download('stopwords')
 nltk.download('movie_reviews')
 nltk.download('punkt')
 nltk.download('vader_lexicon')
-
-# Jika Anda ingin memastikan TextBlob corpora tersedia
-if not os.path.exists(os.path.expanduser('~/.textblob')):
-    from textblob import download_corpora
-    download_corpora()
+from textblob import TextBlob
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from textblob import Word

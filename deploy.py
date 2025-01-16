@@ -92,6 +92,9 @@ clean_data = pd.read_csv('data/twittercellular-clean-sentiment.csv')
 if section == "Sentiment Analyze":
     st.markdown("""<hr style="border: 2px solid #00b6ff; border-radius: 5px;">""", unsafe_allow_html=True)
     st.subheader("📊 Sentiment Analyze")
+    
+    # 1. Sentiment Overview
+    st.markdown("### Sentiment Overview")
     freq = pd.Series(' '.join(clean_data['Text Tweet']).split()).value_counts()
     head_freq = freq.head(20)
     fig1 = px.bar(
@@ -104,6 +107,8 @@ if section == "Sentiment Analyze":
     )
     st.plotly_chart(fig1, use_container_width=True)
 
+    # 2. Sentiment Distribution
+    st.markdown("### Sentiment Distribution")
     temp = clean_data.groupby('Sentiment').count()['Text Tweet'].reset_index().sort_values(by='Text Tweet', ascending=False)
     col1, col2 = st.columns(2)
     with col1:
@@ -117,6 +122,29 @@ if section == "Sentiment Analyze":
                     title="Sentiment Proportion")
         fig3.update_traces(textposition='inside', textinfo='percent+label')
         st.plotly_chart(fig3, use_container_width=True)
+
+    # 3. Sentiment Visualization
+    for sentiment_label, emoji in zip(["Positif", "Negatif", "Netral"], ["\U0001F600", "\U0001F641", "\U0001F610"]):
+        st.subheader(f"{emoji} {sentiment_label} Sentiment Visualization")
+        df_sent = clean_data[clean_data['Sentiment'] == sentiment_label]
+        word_freq = pd.Series(' '.join(df_sent['Text Tweet']).split()).value_counts()
+        top_words = word_freq.head(10)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            fig = px.bar(top_words, y=top_words.index, x=top_words.values, orientation='h',
+                        labels={'x': 'Frequency', 'y': 'Words'},
+                        title=f"Top 10 Words in {sentiment_label} Sentiment")
+            fig.update_layout(template="plotly_dark")
+            st.plotly_chart(fig, use_container_width=True)
+
+        with col2:
+            wordcloud = WordCloud(width=500, height=300, random_state=21, max_font_size=110).generate(' '.join(df_sent['Text Tweet']))
+            fig_cloud, ax = plt.subplots()
+            ax.imshow(wordcloud, interpolation="bilinear")
+            ax.axis('off')
+            ax.set_title(f"Word Cloud for {sentiment_label} Sentiment", fontsize=16)
+            st.pyplot(fig_cloud)
 
 # Section Sentiment Prediction
 elif section == "Sentiment Prediction":

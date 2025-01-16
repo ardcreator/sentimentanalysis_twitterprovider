@@ -29,23 +29,19 @@ Welcome to Team 5's Sentiment Analysis Project! 🌟 Our team, made up of 5 pass
 ### Objective:
 In this project, our mission is to uncover hidden insights from millions of Twitter posts by performing Sentiment Analysis. By classifying tweets as positive, negative, or neutral, we aim to shed light on how users feel about various cellular services. Whether it's customer satisfaction, issues, or praise, our analysis will provide valuable insights into the telecommunications industry.
 
-----------------------------------------------------------------------------------------------------------------------------
 ## Demo Apps
 
 Kamu bisa akses Demo Aplikasi Sentiment Analysis yang kami buat [KLIK DISINI](#) di Platform Desktop ataupun Mobile.
 
-----------------------------------------------------------------------------------------------------------------------------
 ## Support
 
 <a href="https://trakteer.id/ardtrakteer" target="_blank"><img id="wse-buttons-preview" src="https://edge-cdn.trakteer.id/images/embed/trbtn-red-1.png?date=18-11-2023" height="40" style="border:0px;height:40px;" alt="Trakteer Saya"></a>
 
-----------------------------------------------------------------------------------------------------------------------------
 ## Kunjungi Website aku yukk!
 
 - [Ashari Rasyid Website](https://asharirasyid.my.id) - Ashari Rasyid Website
 - [Belajar SisFo](https://belajarsisfo.asharirasyid.my.id) - Belajar SisFo Website
 
-----------------------------------------------------------------------------------------------------------------------------
 ## License
 
 This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](LICENSE) file for more details.

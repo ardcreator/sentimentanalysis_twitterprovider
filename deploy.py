@@ -12,6 +12,7 @@ import plotly.express as px
 
 import nltk
 nltk.download('stopwords')
+nltk.download('movie_reviews')
 from nltk.corpus import stopwords
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory

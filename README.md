@@ -11,7 +11,7 @@
 
 ![screenshoot](https://media.licdn.com/dms/image/v2/D5622AQEHOYerLsixZg/feedshare-shrink_1280/B56ZQDPYyeGsAo-/0/1735221160488?e=1740009600&v=beta&t=Csx4ymVssAErxdedx-1mbiVgwvk5BXUPIDylc1pirl0)
 
-## Team 5 Members:
+## Team 5 Members
 - **Leader**: [MUH. ASHARI RASYID](https://www.linkedin.com/in/ardcreator/)
 - **Members**:
     - [Mega Febriani](https://www.linkedin.com/in/megafebriani-528915326/)
@@ -23,10 +23,10 @@
 
 **Mentor**: [Fadhan Adha](https://www.linkedin.com/in/fadhlan-adha/)
 
-### Project Overview:
+## Project Overview
 Welcome to Team 5's Sentiment Analysis Project! 🌟 Our team, made up of 5 passionate members from the Data Analyst-1 class at MIKTI, is diving deep into the world of social media to understand public sentiment.
 
-### Objective:
+## Objective
 In this project, our mission is to uncover hidden insights from millions of Twitter posts by performing Sentiment Analysis. By classifying tweets as positive, negative, or neutral, we aim to shed light on how users feel about various cellular services. Whether it's customer satisfaction, issues, or praise, our analysis will provide valuable insights into the telecommunications industry.
 
 ## Demo Apps

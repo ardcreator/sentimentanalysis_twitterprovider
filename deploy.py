@@ -12,6 +12,8 @@ import plotly.express as px
 
 import nltk
 nltk.download('stopwords')
+nltk.download('movie_reviews')
+nltk.download('punkt')
 from nltk.corpus import stopwords
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
@@ -20,12 +22,6 @@ import sklearn
 
 from datetime import datetime
 current_year = datetime.now().year
-
-try:
-    nltk.data.find('corpora/movie_reviews')
-except LookupError:
-    nltk.download('movie_reviews')
-    nltk.download('punkt')
 
 # ------------------------
 st.set_page_config(

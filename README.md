@@ -24,10 +24,10 @@
 **Mentor**: [Fadhan Adha](https://www.linkedin.com/in/fadhlan-adha/)
 
 ## Project Overview
-Welcome to Team 5's Sentiment Analysis Project! 🌟 Our team, made up of 5 passionate members from the Data Analyst-1 class at MIKTI, is diving deep into the world of social media to understand public sentiment.
+Selamat datang di Proyek Analisis Sentimen Tim 5! 🌟 Tim kami, yang terdiri dari 5 anggota yang bersemangat dari kelas Analis Data-1 di MIKTI, tengah menyelami dunia media sosial secara mendalam untuk memahami sentimen publik.
 
 ## Objective
-In this project, our mission is to uncover hidden insights from millions of Twitter posts by performing Sentiment Analysis. By classifying tweets as positive, negative, or neutral, we aim to shed light on how users feel about various cellular services. Whether it's customer satisfaction, issues, or praise, our analysis will provide valuable insights into the telecommunications industry.
+Dalam proyek ini, misi kami adalah mengungkap wawasan tersembunyi dari jutaan kiriman Twitter dengan melakukan Analisis Sentimen. Dengan mengklasifikasikan tweet sebagai positif, negatif, atau netral, kami bertujuan untuk mengungkap perasaan pengguna tentang berbagai layanan seluler. Baik itu kepuasan pelanggan, masalah, atau pujian, analisis kami akan memberikan wawasan berharga tentang industri telekomunikasi.
 
 ## Demo Apps
 

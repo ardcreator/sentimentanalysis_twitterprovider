@@ -31,7 +31,7 @@ Dalam proyek ini, misi kami adalah mengungkap wawasan tersembunyi dari jutaan ki
 
 ## Demo Apps
 
-Kamu bisa akses Demo Aplikasi Sentiment Analysis yang kami buat [KLIK DISINI](#) di Platform Desktop ataupun Mobile.
+Kamu bisa akses Demo Aplikasi Sentiment Analysis yang kami buat [KLIK DISINI](https://sentimentanalysis-twitterprovider.streamlit.app/) di Platform Desktop ataupun Mobile.
 
 ## Support
 

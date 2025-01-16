@@ -1,4 +1,5 @@
 # Import Library
+# Import Library
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -11,13 +12,18 @@ from plotly import graph_objs as go
 import plotly.express as px
 
 import nltk
-nltk.download('stopwords')
 from nltk.corpus import stopwords
+nltk.download('stopwords')
+nltk.download('movie_reviews')
+nltk.download('punkt')
+nltk.download('vader_lexicon')
+
+import textblob
+textblob.download_corpora()
+from textblob import Word
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-from textblob import Word
 import sklearn
-
 from datetime import datetime
 current_year = datetime.now().year
 

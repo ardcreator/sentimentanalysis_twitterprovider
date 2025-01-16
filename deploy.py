@@ -6,6 +6,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import joblib
 import re
+import os
 
 from wordcloud import WordCloud
 from plotly import graph_objs as go
@@ -17,6 +18,11 @@ nltk.download('stopwords')
 nltk.download('movie_reviews')
 nltk.download('punkt')
 nltk.download('vader_lexicon')
+
+# Jika Anda ingin memastikan TextBlob corpora tersedia
+if not os.path.exists(os.path.expanduser('~/.textblob')):
+    from textblob import download_corpora
+    download_corpora()
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from textblob import Word

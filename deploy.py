@@ -38,7 +38,7 @@ st.title("🔍 Sentiment Analysis on Twitter Data for Cellular Service Providers
 # Sidebar Navigation
 st.sidebar.title("Navigation")
 nav_options = [
-    "About",
+    "About Us",
     "How to Use?",
     "Sentiment Analyze",
     "Sentiment Prediction"
@@ -46,7 +46,7 @@ nav_options = [
 section = st.sidebar.radio("Go to Section", nav_options)
 
 # Section About
-if section == "About":
+if section == "About Us":
     st.markdown("""<hr style="border: 2px solid #00b6ff; border-radius: 5px;">""", unsafe_allow_html=True)
     st.subheader("ℹ️ About")
     st.markdown("""
